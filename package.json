@@ -1,0 +1,22 @@
+{
+  "name": "rev-hash-cli",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "LinusU/rev-hash-cli",
+  "bin": {
+    "rev-hash": "bin.js"
+  },
+  "scripts": {
+    "test": "standard && mocha"
+  },
+  "dependencies": {
+    "neodoc": "^1.4.0",
+    "rev-hash": "^2.0.0"
+  },
+  "devDependencies": {
+    "execa": "^0.8.0",
+    "mocha": "^3.5.3",
+    "rimraf": "^2.6.2",
+    "standard": "^10.0.3"
+  }
+}
