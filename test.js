@@ -38,6 +38,7 @@ describe('rename files', () => {
     fs.writeFileSync('test-fixtures/b.txt', '')
     fs.writeFileSync('test-fixtures/c.txt', '')
     fs.writeFileSync('test-fixtures/d.txt', '')
+    fs.writeFileSync(`test-fixtures/e-${emptyRevHash}.txt`, '')
   })
 
   after(() => {
@@ -62,5 +63,12 @@ describe('rename files', () => {
 
     assert.strictEqual(fs.existsSync('test-fixtures/d.txt'), false)
     assert.strictEqual(fs.existsSync(`test-fixtures/d-${emptyRevHash}.txt`), true)
+  })
+
+  it('should only add hash once', () => {
+    execa.shellSync(`node ./bin.js --rename test-fixtures/e-${emptyRevHash}.txt`)
+
+    assert.strictEqual(fs.existsSync(`test-fixtures/e-${emptyRevHash}.txt`), true)
+    assert.strictEqual(fs.existsSync(`test-fixtures/e-${emptyRevHash}-${emptyRevHash}.txt`), false)
   })
 })

@@ -29,6 +29,8 @@ for (const file of args['<file>']) {
     const ext = path.extname(file)
     const base = file.slice(0, file.length - ext.length)
 
-    fs.renameSync(file, `${base}-${hash}${ext}`)
+    if (!base.endsWith(`-${hash}`)) {
+      fs.renameSync(file, `${base}-${hash}${ext}`)
+    }
   }
 }
