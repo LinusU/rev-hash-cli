@@ -14,9 +14,9 @@
     "rev-hash": "^2.0.0"
   },
   "devDependencies": {
-    "execa": "^0.8.0",
-    "mocha": "^3.5.3",
+    "execa": "^0.10.0",
+    "mocha": "^5.2.0",
     "rimraf": "^2.6.2",
-    "standard": "^10.0.3"
+    "standard": "^11.0.1"
   }
 }
